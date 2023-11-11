@@ -17,7 +17,7 @@ const Detail = () => {
     const fetchData = async () => {
       try {
         let response;
-        response = await axios.get(`http://localhost:3001/drivers/${id}`);
+        response = await axios.get(`https://driver-backend.onrender.com/drivers/${id}`);
         response = response.data;
         if (!response) {
           response = allDrivers.find((driver) => driver.id === id);
