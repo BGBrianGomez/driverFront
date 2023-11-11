@@ -9,7 +9,7 @@ import axios from "axios";
 export const getByName = (name) => {
   return async function (dispatch) {
     try {
-      let json = await axios.get("http://localhost:3001/drivers?name=" + name);
+      let json = await axios.get("https://driver-backend.onrender.com/drivers?name=" + name);
       dispatch({
         type: GET_BYNAME,
         payload: json.data,
@@ -23,7 +23,7 @@ export const getByName = (name) => {
 export const getAllDrivers = () => {
   return async function (dispatch) {
     try {
-      let drivers = await axios.get("http://localhost:3001/drivers");
+      let drivers = await axios.get("https://driver-backend.onrender.com/drivers");
       dispatch({
         type: GET_DRIVERS,
         payload: drivers.data,
@@ -67,12 +67,12 @@ export const addDriver = (driver)=>{
   driver.teams = driver.teams.join(",")
 
   return async function (dispatch){
-    await axios.post("http://localhost:3001/drivers/form", driver)
+    await axios.post("https://driver-backend.onrender.com/drivers/form", driver)
   }
 }
 export const getTeams = ()=>{
   return async function(dispatch){
-    let teams = await axios.get("http://localhost:3001/teams")
+    let teams = await axios.get("https://driver-backend.onrender.com/teams")
     try {
       dispatch({
         type: GET_TEAMS,
