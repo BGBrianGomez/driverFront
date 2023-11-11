@@ -12,6 +12,8 @@ const Detail = () => {
 
   const [driver, setDriver] = useState({});
 
+  console.log("id", id)
+
   useEffect(() => {
     let formattedData = {};
     const fetchData = async () => {
